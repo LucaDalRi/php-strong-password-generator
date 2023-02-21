@@ -1,24 +1,6 @@
-<?php
-
-$lunghezzaPassword = intval($_GET['lunghezzaPass']);
-
-function generatePassword($lunghezzaPassword)
-{
-    $caratteriPassword = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ123456789!@#$%^&*_+=-?";
-
-    $passwordGenerata = '';
-
-    $prova = str_shuffle($caratteriPassword);
-
-    $passwordGenerata = substr($prova, 1, $lunghezzaPassword);
-
-    return $passwordGenerata;
-}
-
-
+<?php  
+    include __DIR__ . "/functions.php";
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="en">
