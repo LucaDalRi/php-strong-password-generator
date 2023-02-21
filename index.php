@@ -1,3 +1,25 @@
+<?php
+
+$lunghezzaPassword = intval($_GET['lunghezzaPass']);
+
+function generatePassword($lunghezzaPassword)
+{
+    $caratteriPassword = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ123456789!@#$%^&*_+=-?";
+
+    $passwordGenerata = '';
+
+    $prova = str_shuffle($caratteriPassword);
+
+    $passwordGenerata = substr($prova, 1, $lunghezzaPassword);
+
+    return $passwordGenerata;
+}
+
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,6 +31,19 @@
 </head>
 
 <body>
+
+    <form method="get">
+        <label for="lunghezzaPass">Inserisci la lunghezza della password che vuoi generare</label><br>
+        <input type="number" name="lunghezzaPass" id="lunghezzaPass" min='0' max='30' placeholder="0-30">
+        <button type="submit">Invio</button>
+    </form>
+
+    <h1>
+        <?php
+        echo generatePassword($lunghezzaPassword);
+        ?>
+
+    </h1>
 
 </body>
 
