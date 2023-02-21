@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 $lunghezzaPassword = $_GET['lunghezzaPass'];
 
 function generatePassword($lunghezzaPassword)
@@ -11,8 +13,11 @@ function generatePassword($lunghezzaPassword)
     $stringaMischiata = str_shuffle($caratteriPassword);
 
     $passwordGenerata = substr($stringaMischiata, 0, $lunghezzaPassword);
+    
+    header('Location: ./pswdPage.php');
 
     return $passwordGenerata;
+    
 }
 
 ?>
