@@ -1,17 +1,17 @@
 <?php
 
+session_start();
+
 $lunghezzaPassword = $_GET['lunghezzaPass'];
 
-    $caratteriPassword = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ123456789!@#$%^&*_+=-?";
+$caratteriPassword = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ123456789!@#$%^&*_+=-?";
 
-    $passwordGenerata = '';
+$passwordGenerata = '';
 
-    $stringaMischiata = str_shuffle($caratteriPassword);
+$stringaMischiata = str_shuffle($caratteriPassword);
 
-    $passwordGenerata = substr($stringaMischiata, 0, $lunghezzaPassword);
+$passwordGenerata = substr($stringaMischiata, 0, $lunghezzaPassword);
 
-    $_SESSION['password'] = $passwordGenerata;
+$_SESSION['password'] = $passwordGenerata;
     
-    header('Location: ./pswdPage.php');
-
-?>
+header('Location: ./pswdPage.php');
