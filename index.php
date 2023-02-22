@@ -1,9 +1,6 @@
 <?php
-include __DIR__ . "/functions.php";
 
 session_start();
-
-$_SESSION['password'] = generatePassword($lunghezzaPassword);
 
 ?>
 
@@ -19,7 +16,7 @@ $_SESSION['password'] = generatePassword($lunghezzaPassword);
 
 <body>
 
-    <form method="GET">
+    <form method="GET" action="functions.php">
         <label for="lunghezzaPass">Inserisci la lunghezza della password che vuoi generare</label><br>
         <input type="number" name="lunghezzaPass" id="lunghezzaPass" min='0' max='30' placeholder="0-30">
         <button type="submit">Invio</button>
